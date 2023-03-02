@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mantener</title>
+    <link rel="stylesheet" href="mant.css">
+</head>
+<body>
+    <h1>Mantener</h1>
+    <h4>Ingrese por favor los siguientes datos: </h4>
+    <br><br>
+    <div class="textbox">
+    <form id="mantener">
+        Valor empresarial actual de la aplicación:
+        <input id="P3" type="number" required spellcheck="false">
+        <br><br>
+        Costo de mantenimiento actual:
+        <input id="P1" type="number" required spellcheck="false">
+        <br><br>
+        Costo de operación actual:
+        <input id="P2" type="number" required spellcheck="false">
+        <br><br>
+        Vida esperada del sistema:
+        <input id="L" type="number" required spellcheck="false">
+        <br><br>
+        <center><input type="button" class= "button" onclick="obtenerDatos()" value="Calcular"></center>
+    </form>
+    </div>
+    <div><p id='res'></p></div>
+    <br><br>
+    <a href="index.html" class="button">Volver</a>
+</body>
+</html>
+
+<script>
+    function obtenerDatos(){
+        var p3 = parseInt(document.getElementById("P3").value);
+        console.log(P3);
+        var p1 = parseInt(document.getElementById("P1").value);
+        console.log(P1);
+        var p2 = parseInt(document.getElementById("P2").value);
+        console.log(P2);
+        var l = parseInt(document.getElementById("L").value);
+        console.log(L);
+        var rF = (p3-(p1+p2))*l;
+        console.log(rF);
+
+        var Texto = "<div><p>Costo de matenimiento actual: </p>"+
+            rF+"</div>" ;
+        document.getElementById("res").innerHTML = Texto;
+    }
+</script>

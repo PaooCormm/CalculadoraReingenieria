@@ -1,0 +1,108 @@
+body {
+    background: #609966;
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont;
+}
+
+body.open .menu-items {
+    display: flex;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    height: 60px;
+    padding: 0 20px;
+    background: #40513B;
+}
+
+nav img{
+    width: 30px;
+    height: 30px;
+}
+
+.burger { display: none;}
+
+.menu-items, .menu {
+    display: flex;
+    gap: 16px;
+}
+
+.menu-right img {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+}
+
+.menu-right .badge {
+    position: absolute;
+    top: 0;
+    left: 14px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid #609966;
+    background: 
+        linear-gradient(#40513B, #9DC08B);
+    
+}
+
+@media (width <= 580px) {
+    .menu-items{
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 16px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 0 20px 20px;
+        background: #9DC08B;
+    }
+}
+
+.menu-right img:nth-child(n+3){
+    display: none;
+}
+
+.menu-left {
+    flex-direction: column;
+    gap: 12px;
+}
+
+.menu-left a{
+    border-bottom: 1px solid #9DC08B;
+    padding-bottom: 10px;
+
+}
+
+a:link, a:visited {
+    background-color: #40513B;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+a:hover, a:active{
+    background-color: #9DC08B;
+}
+
+.menu-right {margin-left: 0;}
+.burger {display: block;}
+
+h1 {
+    white-space: nowrap;
+    margin: 0 0 4px;
+    font-size: 40px;
+    color: rgb(255, 255, 255 / 96%)
+}
+
+h3 {
+    font-weight: 400;
+    margin: 0;
+    color: rgb(255, 255, 255 / 57%)
+}

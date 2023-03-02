@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reingeniería</title>
+    <link rel="stylesheet" href="mant.css">
+</head>
+<body>
+    <h1>Reingeniería</h1>
+    <h4>Ingrese por favor los siguientes datos: </h4>
+    <br><br>
+    <div class="textbox">
+    <form id="reingenieria">
+        Valor empresarial despues de la reingeniería (Anual):
+        <input id="P6" type="number" required spellcheck="false">
+        <br><br>
+        Costo de mantenimiento despues de la reingeniería:
+        <input id="P4" type="number" required spellcheck="false">
+        <br><br>
+        Costo de operación despúes de la reingeniería:
+        <input id="P5" type="number" required spellcheck="false">
+        <br><br>
+        Vida esperada del sistema:
+        <input id="L" type="number" required spellcheck="false">
+        <br><br>
+        Tiempo estimado de la reingeniería:
+        <input id="P8" type="number" required spellcheck="false">
+        <br><br>
+        Costo estimado del proyecto de reingeniería:
+        <input id="P7" type="number" required spellcheck="false">
+        <br><br>
+        Factor de riesgo de la reingeniería:
+        <input id="P9" type="number" readonly="readonly" value="1">
+        <br><br>
+        <center><input type="button" onclick="obtenerDatos()" value="Calcular"></center>
+    </form>
+    </div>
+    <div><p id='res'></p></div>
+    <br><br>
+    <a href="index.html">Volver</a>
+</body>
+</html>
+
+<script>
+    function obtenerDatos(){
+        var p8 = parseInt(document.getElementById("P8").value);
+        console.log(p8);
+        var p6 = parseInt(document.getElementById("P6").value);
+        console.log(p6);
+        var p4 = parseInt(document.getElementById("P4").value);
+        console.log(p4);
+        var p5 = parseInt(document.getElementById("P5").value);
+        console.log(p5);
+        var l = parseInt(document.getElementById("L").value);
+        console.log(l);
+        var p7 = parseInt(document.getElementById("P7").value);
+        console.log(p7);
+        var p9 = 1;
+        console.log(p9);
+        var rF = p6 - (p4 + p5) * (l - p8) - (p7*p9);
+
+        var Texto = "<div><p>Costo de matenimiento actual: </p>"+
+            rF+"</div>" ;
+        document.getElementById("res").innerHTML = Texto;
+    }
+</script>
+</body>
+</html>
